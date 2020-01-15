@@ -1,4 +1,5 @@
 <mat-card class="example-card">
+  <div class="center">
   <mat-card-header>
     <mat-card-title>Connexion</mat-card-title>
   </mat-card-header>
@@ -24,13 +25,5 @@
   <mat-card-actions>
     <button mat-raised-button (click)="login()" color="primary">Login</button>
   </mat-card-actions>
+</div>
 </mat-card>
-<mat-grid-list cols="4" rowHeight="100px">
-  <mat-grid-tile
-      *ngFor="let tile of tiles"
-      [colspan]="tile.cols"
-      [rowspan]="tile.rows"
-      [style.background]="tile.color">
-    {{tile.text}}
-  </mat-grid-tile>
-</mat-grid-list>
