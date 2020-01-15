@@ -11,12 +11,12 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
-  username: string;
+  mail: string;
 
   ngOnInit() {
   }
 
   login(): void {
-      alert(`${this.username} hey`);
+      alert(`${this.mail} hey`);
   }
 }
