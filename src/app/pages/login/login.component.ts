@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,15 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  profileForm = this.fb.group({
+    mail: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.required]],
+  });
 
-  constructor() { }
-
-  mail: string;
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
-  login(): void {
-      alert(`${this.mail} hey`);
+  onSubmit() {
+    alert(`Mon courriel est ${this.profileForm.value.mail}`);
   }
 }

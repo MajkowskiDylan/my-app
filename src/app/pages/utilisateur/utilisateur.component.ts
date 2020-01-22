@@ -1,0 +1,3 @@
+interface Utilisateur {
+  name: string;
+}

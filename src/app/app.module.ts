@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { LoginComponent } from './pages/login/login.component';
 import { NavComponent } from './pages/nav/nav.component';
+// import { UtilisateursComponent } from './pages/login/login.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,14 +18,30 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { UtilisateursComponent } from './pages/utilisateurs/utilisateurs.component';
+
+export const routes: Routes = [
+  { path: '',           redirectTo: 'home', pathMatch: 'full' }, // path: '/'
+  { path: 'login',    component: LoginComponent },
+  { path: 'home',  component: HomeComponent},
+  { path: 'utilisateurs',    component: UtilisateursComponent },
+  // { path: 'contact/:id', component: ContactComponent },
+
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NavComponent
+    NavComponent,
+    HomeComponent,
+    UtilisateursComponent,
   ],
   imports: [
+    RouterModule.forRoot(routes),
     MatSliderModule,
     BrowserModule,
     AppRoutingModule,
@@ -38,7 +55,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
