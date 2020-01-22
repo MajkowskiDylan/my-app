@@ -22,12 +22,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { UtilisateursComponent } from './pages/utilisateurs/utilisateurs.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
   { path: '',           redirectTo: 'home', pathMatch: 'full' }, // path: '/'
   { path: 'login',    component: LoginComponent },
   { path: 'home',  component: HomeComponent},
   { path: 'utilisateurs',    component: UtilisateursComponent },
+  { path: 'dashboard',  component: DashboardComponent},
   // { path: 'contact/:id', component: ContactComponent },
 
 ];
@@ -39,6 +41,7 @@ export const routes: Routes = [
     NavComponent,
     HomeComponent,
     UtilisateursComponent,
+    DashboardComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
