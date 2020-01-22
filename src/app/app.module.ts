@@ -23,6 +23,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { UtilisateursComponent } from './pages/utilisateurs/utilisateurs.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { UtilisateurComponent } from './pages/utilisateur/utilisateur.component';
 
 export const routes: Routes = [
   { path: '',           redirectTo: 'home', pathMatch: 'full' }, // path: '/'
@@ -42,6 +43,7 @@ export const routes: Routes = [
     HomeComponent,
     UtilisateursComponent,
     DashboardComponent,
+    UtilisateurComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
