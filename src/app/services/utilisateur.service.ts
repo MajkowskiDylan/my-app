@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Utilisateur } from '../modeles/utilisateur';
 import {Observable, of} from 'rxjs';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +25,10 @@ export class UtilisateurService {
     }
   ];
 
-  constructor() { }
+  constructor(private db: AngularFirestore) {
+  }
+
   getUsers(): Observable<Utilisateur[]> {
-    return of(this.users);
+    return this.db.collection<Utilisateur>('utilisateurs').valueChanges();
   }
 }

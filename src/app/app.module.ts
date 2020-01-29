@@ -26,6 +26,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UtilisateurComponent } from './pages/utilisateur/utilisateur.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 export const routes: Routes = [
   { path: '',           redirectTo: 'home', pathMatch: 'full' }, // path: '/'
@@ -64,7 +66,9 @@ export const routes: Routes = [
     MatInputModule,
     MatGridListModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
   ],
   providers: [],
   bootstrap: [AppComponent]
