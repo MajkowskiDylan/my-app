@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import Utilisateur from '../utilisateur/utilisateur.component';
+import { Utilisateur } from 'src/app/modeles/utilisateur';
 @Component({
   selector: 'app-utilisateurs',
   templateUrl: './utilisateurs.component.html',
@@ -7,7 +7,7 @@ import Utilisateur from '../utilisateur/utilisateur.component';
 })
 export class UtilisateursComponent {
   @Input()
-  user: Utilisateur;
+  user: Utilisateur[];
   constructor() {}
   ngOnInit(): void {}
 }

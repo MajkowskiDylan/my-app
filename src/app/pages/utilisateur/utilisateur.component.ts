@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Utilisateur } from 'src/app/modeles/utilisateur';
 
 @Component({
   selector: 'app-utilisateur',
   templateUrl: './utilisateur.component.html',
   styleUrls: ['./utilisateur.component.scss']
 })
-export interface UtilisateurComponent implements OnInit {
-    firstName: string;
-    lastName: string;
-    mail: string;
-    role: string;
-    photo: string;
+export class UtilisateurComponent implements OnInit {
+    @Input()
+    user: Utilisateur;
+    constructor() {}
+    ngOnInit(): void {}
   }
