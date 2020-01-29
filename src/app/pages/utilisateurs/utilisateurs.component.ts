@@ -6,8 +6,31 @@ import { Utilisateur } from 'src/app/modeles/utilisateur';
   styleUrls: ['./utilisateurs.component.scss']
 })
 export class UtilisateursComponent {
-  @Input()
-  user: Utilisateur[];
+
+  users: Utilisateur[];
+  appareils = [
+    {
+      name: 'Machine à laver',
+      status: 'éteint'
+    },
+    {
+      name: 'Frigo',
+      status: 'allumé'
+    },
+    {
+      name: 'Ordinateur',
+      status: 'éteint'
+    }
+  ];
   constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.users = [
+      {
+        firstName: 'Jeune',
+        lastName: 'Viève',
+        mail: 'genevieve@m.com',
+        photo: '',
+        role: 'kek',
+      }];
+  }
 }
