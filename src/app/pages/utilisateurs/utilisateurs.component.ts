@@ -12,6 +12,7 @@ export class UtilisateursComponent {
 
   constructor(private utilisateurService: UtilisateurService) {}
   ngOnInit(): void {
-      this.users = this.utilisateurService.getUsers();
+      //this.users = this.utilisateurService.getUsers();
+      this.utilisateurService.getUsers().subscribe(users => this.users = users);
   }
 }

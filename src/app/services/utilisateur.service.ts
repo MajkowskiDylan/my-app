@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Utilisateur } from '../modeles/utilisateur';
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class UtilisateurService {
   ];
 
   constructor() { }
-  getUsers(): Utilisateur[] {
-    return this.users;
+  getUsers(): Observable<Utilisateur[]> {
+    return of(this.users);
   }
 }
