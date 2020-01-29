@@ -2,7 +2,6 @@ D'après data utilisateur:
 <ul>
     <li
      *ngFor="let u of users">
-      {{ u.firstName }} {{ u.lastName }} {{ u.mail }} {{ u.photo }} {{ u.role }}
       <app-utilisateur [user]="u"></app-utilisateur>
     </li>
 </ul>
