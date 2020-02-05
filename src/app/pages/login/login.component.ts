@@ -28,9 +28,10 @@ export class LoginComponent implements OnInit {
 
   login(mail, password) {
     this.afAuth.auth.signInWithEmailAndPassword(mail, password).then(() => {
-      debugger;
+      alert("Mail: " + mail + " / pwd: " + password);
+
     }).catch(error => {
-      debugger;
+      alert("Mauvais email ou mauvais mot de passe");
     }
     );
   }
