@@ -15,7 +15,8 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a [routerLink]="['/home']" mat-list-item href="#">Accueil</a>
-      <a [routerLink]="['/login']" mat-list-item href="#">Connexion</a>
+      <a *ngIf="!(isLoggedIn$ | async)" [routerLink]="['/login']" mat-list-item href="#">Connexion</a>
+      <a *ngIf="isLoggedIn$ | async" [routerLink]="['/login']" mat-list-item href="#">Déconnexion</a>
       <a [routerLink]="['/utilisateurs']" mat-list-item href="#">Utilisateurs</a>
       <a [routerLink]="['/dashboard']" mat-list-item href="#">Dashboard</a>
     </mat-nav-list>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  Directive, Input  } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
@@ -28,16 +28,20 @@ export class LoginComponent implements OnInit {
 
   login(mail, password) {
     this.afAuth.auth.signInWithEmailAndPassword(mail, password).then(() => {
-      alert("Mail: " + mail + " / pwd: " + password);
+      alert('Mail: ' + mail + ' / pwd: ' + password);
 
     }).catch(error => {
-      alert("Mauvais email ou mauvais mot de passe");
+      alert('Mauvais email ou mauvais mot de passe');
     }
     );
   }
 
   logout() {
     this.afAuth.auth.signOut();
+  }
+
+  isDashboardPage() {
+    return (window.location).pathname === '/dashboard';
   }
 
 }

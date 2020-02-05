@@ -34,10 +34,20 @@ const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 const redirectLoggedInToDashboard = () => redirectLoggedInTo(['dashboard']);
 export const routes: Routes = [
   { path: '',           redirectTo: 'home', pathMatch: 'full' }, // path: '/'
-  { path: 'login',    component: LoginComponent },
-  { path: 'home',  component: HomeComponent},
-  { path: 'utilisateurs',    component: UtilisateursComponent },
-  { path: 'dashboard',  component: DashboardComponent, canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin }},
+  { path: 'login',
+    component: LoginComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectLoggedInToDashboard }
+  },
+  { path: 'home', component: HomeComponent},
+  { path: 'utilisateurs', component: UtilisateursComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AngularFireAuthGuard],
+    data: { authGuardPipe: redirectUnauthorizedToLogin
+  }
+  },
   // { path: 'contact/:id', component: ContactComponent },
 
 ];
@@ -72,7 +82,7 @@ export const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireAuthGuardModule
+    AngularFireAuthGuardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
