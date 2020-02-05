@@ -19,6 +19,9 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder, public afAuth: AngularFireAuth) { }
 
   ngOnInit() {
+    if(this.afAuth.user != null) {
+      this.logout();
+    }
   }
 
   onSubmit() {

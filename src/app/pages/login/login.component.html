@@ -3,7 +3,8 @@
   <mat-card-header>
     <mat-card-title>Connexion</mat-card-title>
   </mat-card-header>
-  <span *ngIf="isDashboardPage()"><br />Redirigé, il est nécessaire de se connecter pour  accéder au dashboard</span>
+
+
   <mat-card-content>
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="example-form">
       <table class="example-full-width" cellspacing="0">
